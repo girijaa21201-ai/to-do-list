@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><title>To-Do App - Girija</title>
+<style>body{font-family:Arial;text-align:center;background:#f0f2ff}
+input{padding:10px;width:200px} button{padding:10px;background:blue;color:white;border:none}
+li{list-style:none;background:white;margin:10px;padding:10px;border-radius:10px}</style>
+</head>
+<body>
+<h1>My To-Do List 📝</h1>
+<input id="task" placeholder="Task type pannu...">
+<button onclick="add()">Add</button>
+<ul id="list"></ul>
+<script>
+function add(){
+let t=document.getElementById("task").value;
+if(t=="")return;
+let li=document.createElement("li");
+li.innerText=t+" ❌";
+li.onclick=function(){this.remove()};
+document.getElementById("list").appendChild(li);
+document.getElementById("task").value="";
+}
+</script>
+</body>
+</html>
